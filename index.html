@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#142522" />
+    <meta name="description" content="A small open-world adventure through the Wilds. Find the lost lights and wake the old shrine." />
+    <title>The Wilds — Echoes of the First Light</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="game-shell" aria-label="The Wilds adventure game">
+      <canvas id="world" aria-label="Game world. Use WASD or the arrow keys to explore."></canvas>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <header class="topbar" id="hud" hidden>
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"><span>✦</span></div>
+          <div><p class="eyebrow">THE WILDS</p><p class="brand-subtitle">ECHOES OF THE FIRST LIGHT</p></div>
+        </div>
+        <div class="location"><span class="location-pin">⌖</span><span id="location-name">The Quiet Meadow</span></div>
+        <div class="clock"><span class="sun-icon">☼</span><span id="time-label">08:40</span><span class="weather-label">CLEAR</span></div>
+      </header>
+
+      <section class="quest-card hud-piece" id="quest-card" hidden>
+        <div class="quest-heading"><span class="quest-glyph">◇</span><span>MAIN QUEST</span><span class="quest-line"></span></div>
+        <h1 id="quest-title">The Sleeping Shrine</h1>
+        <p id="quest-copy">Find the three lost lights to awaken the ancient shrine.</p>
+        <div class="relic-row" aria-label="Lost lights collected">
+          <span class="relic-slot" id="relic-0">✧</span><span class="relic-slot" id="relic-1">✧</span><span class="relic-slot" id="relic-2">✧</span>
+          <span class="relic-count" id="relic-count">0 / 3</span>
+        </div>
+        <div class="quest-foot"><span class="compass-mini">↑</span><span id="objective-distance">FOLLOW THE LIGHTS</span></div>
+      </section>
+
+      <aside class="map-card hud-piece" id="map-card" hidden>
+        <div class="map-title"><span>FIELD MAP</span><span class="map-coords" id="map-coords">—</span></div>
+        <canvas id="minimap" width="180" height="128" aria-label="Minimap"></canvas>
+        <div class="map-legend"><span><i class="legend-player"></i> YOU</span><span><i class="legend-objective"></i> SHRINE</span></div>
+      </aside>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <div class="interaction-prompt" id="interaction-prompt" hidden><span class="keycap">E</span><span id="interaction-copy">Gather the lost light</span></div>
+
+      <section class="bottom-hud hud-piece" id="bottom-hud" hidden>
+        <div class="vitals">
+          <div class="hearts" id="hearts" aria-label="Health"><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span></div>
+          <div class="stamina-wrap"><span class="stamina-icon">◈</span><div class="stamina-track"><div id="stamina-fill"></div></div></div>
+        </div>
+        <div class="weapon-pill"><span class="weapon-icon">⚔</span><span>TRAVELER'S BLADE</span><span class="weapon-key">SPACE</span></div>
+        <div class="controls-hint"><span><kbd>W A S D</kbd> MOVE</span><span><kbd>SHIFT</kbd> RUN</span><span><kbd>E</kbd> USE</span><span><kbd>M</kbd> MAP</span></div>
+      </section>
+
+      <div class="mobile-controls" id="mobile-controls" hidden aria-label="Touch controls">
+        <div class="dpad"><button data-move="up" aria-label="Move up">▲</button><button data-move="left" aria-label="Move left">◀</button><button data-move="down" aria-label="Move down">▼</button><button data-move="right" aria-label="Move right">▶</button></div>
+        <div class="mobile-actions"><button class="mobile-use" id="mobile-use" aria-label="Gather or enter">E</button><button class="mobile-run" id="mobile-run" aria-label="Run">RUN</button><button class="mobile-action" id="mobile-attack" aria-label="Attack">⚔</button></div>
+      </div>
+
+      <section class="overlay intro-overlay" id="intro-overlay">
+        <div class="intro-card">
+          <div class="sun-emblem" aria-hidden="true"><span>✧</span></div>
+          <p class="intro-kicker">A QUIET WORLD, A WAITING CALL</p>
+          <h1>The Wilds</h1>
+          <p class="intro-subtitle">Echoes of the First Light</p>
+          <div class="intro-rule"><span></span><i>✦</i><span></span></div>
+          <p class="intro-copy">The old shrine has fallen silent. Three wandering lights are all that remain between this land and the dark.</p>
+          <div class="intro-controls"><div><kbd>W A S D</kbd><span>WALK</span></div><div><kbd>SHIFT</kbd><span>RUN</span></div><div><kbd>SPACE</kbd><span>STRIKE</span></div><div><kbd>E</kbd><span>GATHER</span></div></div>
+          <button class="start-button" id="start-button"><span>Begin the journey</span><b>→</b></button>
+          <p class="intro-note">A small adventure made for the open air <span>·</span> best with sound on</p>
+        </div>
+      </section>
+
+      <section class="overlay pause-overlay" id="pause-overlay" hidden>
+        <div class="pause-card"><p class="intro-kicker">TAKE A BREATH</p><h2>Journey paused</h2><p>The wilds will be here when you return.</p><button class="start-button" id="resume-button"><span>Return to the wilds</span><b>→</b></button><p class="pause-note">Press <kbd>ESC</kbd> to continue</p></div>
+      </section>
+
+      <section class="overlay ending-overlay" id="ending-overlay" hidden>
+        <div class="ending-card"><div class="ending-star">✧</div><p class="intro-kicker">THE FIRST LIGHT RETURNS</p><h2>The shrine remembers.</h2><p>Three small lights have found their way home. And somewhere beyond the hills, the world begins again.</p><div class="ending-rule"></div><button class="start-button" id="again-button"><span>Wander once more</span><b>↻</b></button></div>
+      </section>
+
+      <div class="flash" id="flash"></div>
+      <div class="screen-reader-only" id="announcer" aria-live="polite"></div>
+    </main>
+    <script src="./game.js"></script>
+  </body>
+</html>
