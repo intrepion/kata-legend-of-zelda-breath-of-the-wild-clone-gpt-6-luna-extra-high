@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#142522" />
-    <meta name="description" content="A small open-world adventure through the Wilds. Find the lost lights and wake the old shrine." />
+    <meta name="description" content="A third-person 3D adventure through the Wilds. Find the lost lights and wake the old shrine." />
     <title>The Wilds — Echoes of the First Light</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css?v=3d" />
   </head>
   <body>
     <main class="game-shell" aria-label="The Wilds adventure game">
-      <canvas id="world" aria-label="Game world. Use WASD or the arrow keys to explore."></canvas>
+      <canvas id="world" aria-label="Three-dimensional game world. Use WASD to move and drag to orbit the camera."></canvas>
       <div class="vignette" aria-hidden="true"></div>
 
       <header class="topbar" id="hud" hidden>
@@ -51,7 +51,7 @@
           <div class="stamina-wrap"><span class="stamina-icon">◈</span><div class="stamina-track"><div id="stamina-fill"></div></div></div>
         </div>
         <div class="weapon-pill"><span class="weapon-icon">⚔</span><span>TRAVELER'S BLADE</span><span class="weapon-key">SPACE</span></div>
-        <div class="controls-hint"><span><kbd>W A S D</kbd> MOVE</span><span><kbd>SHIFT</kbd> RUN</span><span><kbd>E</kbd> USE</span><span><kbd>M</kbd> MAP</span></div>
+        <div class="controls-hint"><span><kbd>W A S D</kbd> MOVE</span><span><kbd>SHIFT</kbd> RUN</span><span><kbd>SPACE</kbd> STRIKE</span><span><kbd>E</kbd> USE</span><span><kbd>M</kbd> MAP</span><span>DRAG LOOK</span></div>
       </section>
 
       <div class="mobile-controls" id="mobile-controls" hidden aria-label="Touch controls">
@@ -67,9 +67,9 @@
           <p class="intro-subtitle">Echoes of the First Light</p>
           <div class="intro-rule"><span></span><i>✦</i><span></span></div>
           <p class="intro-copy">The old shrine has fallen silent. Three wandering lights are all that remain between this land and the dark.</p>
-          <div class="intro-controls"><div><kbd>W A S D</kbd><span>WALK</span></div><div><kbd>SHIFT</kbd><span>RUN</span></div><div><kbd>SPACE</kbd><span>STRIKE</span></div><div><kbd>E</kbd><span>GATHER</span></div></div>
+          <div class="intro-controls"><div><kbd>W A S D</kbd><span>WALK</span></div><div><kbd>SHIFT</kbd><span>RUN</span></div><div><kbd>SPACE</kbd><span>STRIKE</span></div><div><kbd>E</kbd><span>GATHER</span></div><div><kbd>DRAG</kbd><span>LOOK</span></div></div>
           <button class="start-button" id="start-button"><span>Begin the journey</span><b>→</b></button>
-          <p class="intro-note">A small adventure made for the open air <span>·</span> best with sound on</p>
+          <p class="intro-note">THIRD PERSON ADVENTURE <span>·</span> BEST WITH SOUND ON</p>
         </div>
       </section>
 
@@ -84,6 +84,14 @@
       <div class="flash" id="flash"></div>
       <div class="screen-reader-only" id="announcer" aria-live="polite"></div>
     </main>
-    <script src="./game.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./game.js?v=3d"></script>
   </body>
 </html>

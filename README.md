@@ -1,32 +1,33 @@
 # The Wilds: Echoes of the First Light
 
-A small, self-contained open-world adventure for the browser. Explore a hand-drawn wilderness, keep an eye on your stamina, face the creatures that guard its lost lights, and bring them back to the sleeping shrine.
+A third-person 3D browser adventure. Explore a low-poly wilderness, orbit the camera around the wanderer, manage stamina, face creatures guarding three lost lights, and return them to the sleeping shrine.
 
 ## Play
 
-No build step or package install is needed. Serve this directory with any static file server, then open its local URL. For example:
+Serve this directory with a static file server:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Open <http://localhost:8000> and choose **Begin the journey**. The game uses Canvas and the Web Audio API; the typefaces load from Google Fonts when online and fall back to system fonts otherwise.
+Open <http://localhost:8000> and choose **Begin the journey**. The game uses Three.js 0.186.0 through a version-pinned CDN import map, so an internet connection is required to load the 3D engine and web fonts. It does not need a build step or package installation.
 
 ## Controls
 
-| Action | Keyboard | Touch |
+| Action | Keyboard / mouse | Touch |
 | --- | --- | --- |
 | Move | `W A S D` or arrow keys | Direction pad |
 | Run | Hold `Shift` (uses stamina) | Hold `RUN` (uses stamina) |
-| Strike | `Space` or click toward a target | Sword button |
+| Look around | Drag the scene; scroll to zoom | Drag the scene |
+| Strike | `Space` or click | Sword button |
 | Gather / enter | `E` | Walk close, then tap `E` |
-| Field map | `M` | Minimap hidden on small screens |
+| Field map | `M` | Hidden on small screens |
 | Pause | `Esc` | — |
 
-Find three lost lights, then return to the shrine at the end of the old road. Nearby wanderers can be defeated with a forward strike. If you fall in battle, you wake back in the meadow with your gathered lights intact.
+Find three lost lights, then return to the shrine on the old road. Nearby wanderers can be defeated with a forward strike. If you fall in battle, you wake back in the meadow with your gathered lights intact.
 
 ## Project files
 
-- `index.html` — game shell, HUD, intro, and ending screens
+- `index.html` — game shell, HUD, intro, import map, and ending screens
 - `style.css` — responsive interface and overlays
-- `game.js` — world generation, rendering, movement, combat, audio, and game state
+- `game.js` — 3D terrain, scenery, player/enemy models, camera, movement, combat, audio, and game state

@@ -131,12 +131,15 @@ kbd { color: #d8d3c0; border: 1px solid rgba(231, 222, 184, .24); border-radius:
   .location { position: absolute; left: 50%; transform: translateX(-50%); top: 73px; padding: 6px 9px; background: rgba(16, 30, 27, .55); white-space: nowrap; font-size: 9px; }
   .clock { min-width: 0; font-size: 9px; gap: 5px; }
   .weather-label { display: none; }
-  .quest-card { left: 13px; top: 148px; width: min(235px, calc(100% - 26px)); padding: 11px 12px; }
-  .quest-card h1 { margin-top: 8px; font-size: 17px; }
-  .quest-card > p { font-size: 9px; }
-  .relic-row { margin: 9px 0; }
-  .relic-slot { width: 20px; height: 20px; font-size: 13px; }
-  .quest-foot { padding-top: 7px; font-size: 8px; }
+  .quest-card { left: 13px; top: 108px; width: 168px; padding: 8px 9px; }
+  .quest-heading { font-size: 8px; gap: 5px; }
+  .quest-glyph { font-size: 13px; }
+  .quest-card h1 { margin: 4px 0 3px; font-size: 13px; }
+  .quest-card > p { display: none; }
+  .relic-row { margin: 3px 0 4px; gap: 5px; }
+  .relic-slot { width: 18px; height: 18px; font-size: 12px; }
+  .relic-count { font-size: 8px; }
+  .quest-foot { display: none; }
   .map-card { display: none; }
   .bottom-hud { height: 82px; padding: 0 14px; justify-content: space-between; }
   .vitals { width: 130px; }
@@ -150,6 +153,13 @@ kbd { color: #d8d3c0; border: 1px solid rgba(231, 222, 184, .24); border-radius:
   .intro-card h1 { font-size: 42px; }
   .intro-controls { gap: 12px; }
   .intro-controls kbd { font-size: 7px; }
+  .toast { top: 87px; left: auto; right: 12px; max-width: calc(100% - 196px); white-space: normal; text-align: right; font-size: 7px; padding: 7px 8px; transform: translateY(-6px); }
+  .toast.show { transform: translateY(0); }
+}
+
+@media (min-width: 761px) and (max-width: 1080px) {
+  .weapon-pill { display: none; }
+  .controls-hint { gap: 10px; font-size: 8px; }
 }
 
 @media (max-height: 650px) and (min-width: 761px) {
