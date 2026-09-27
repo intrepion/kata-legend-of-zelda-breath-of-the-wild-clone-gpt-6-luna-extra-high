@@ -4,13 +4,15 @@ A third-person 3D browser adventure. Explore a low-poly wilderness, orbit the ca
 
 ## Play
 
-Serve this directory with a static file server:
+Open `index.html` directly in a browser, or serve this directory with a static file server:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Open <http://localhost:8000> and choose **Begin the journey**. The game uses Three.js 0.186.0 through a version-pinned CDN import map, so an internet connection is required to load the 3D engine and web fonts. It does not need a build step or package installation.
+Open <http://localhost:8000> and choose **Begin the journey**. The checked-in `game.bundle.js` includes Three.js 0.186.0, so the game engine works from `file://` without a package install or server. Web fonts load from Google Fonts when online and fall back to system fonts otherwise.
+
+When changing `game.js`, rebuild the checked-in browser bundle with `npm install` followed by `npm run build`.
 
 ## Controls
 
@@ -28,6 +30,7 @@ Find three lost lights, then return to the shrine on the old road. Nearby wander
 
 ## Project files
 
-- `index.html` — game shell, HUD, intro, import map, and ending screens
+- `index.html` — game shell, HUD, intro, and ending screens
 - `style.css` — responsive interface and overlays
-- `game.js` — 3D terrain, scenery, player/enemy models, camera, movement, combat, audio, and game state
+- `game.js` — source for the 3D terrain, scenery, characters, camera, movement, combat, audio, and game state
+- `game.bundle.js` — standalone browser bundle for direct `file://` use

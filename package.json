@@ -1,0 +1,14 @@
+{
+  "name": "the-wilds-first-light",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "esbuild game.js --bundle --format=iife --global-name=WildsGame --minify --outfile=game.bundle.js"
+  },
+  "dependencies": {
+    "three": "0.186.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}
