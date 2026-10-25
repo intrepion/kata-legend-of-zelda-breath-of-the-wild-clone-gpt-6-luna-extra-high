@@ -1,5 +1,9 @@
 # The Wilds: Echoes of the First Light
 
+## Play online
+
+[Play The Wilds](https://intrepion.github.io/kata-legend-of-zelda-breath-of-the-wild-clone-gpt-6-luna-extra-high/) — free, playable in your browser.
+
 A third-person 3D browser adventure. Explore a low-poly wilderness, orbit the camera around the wanderer, manage stamina, face creatures guarding three lost lights, and return them to the sleeping shrine.
 
 ## Play
