@@ -38,3 +38,7 @@ Find three lost lights, then return to the shrine on the old road. Nearby wander
 - `style.css` — responsive interface and overlays
 - `game.js` — source for the 3D terrain, scenery, characters, camera, movement, combat, audio, and game state
 - `game.bundle.js` — standalone browser bundle for direct `file://` use
+
+## Arcade metadata
+
+See [docs/arcade-metadata.md](docs/arcade-metadata.md) for the game-owned manifest and screenshot provenance.
