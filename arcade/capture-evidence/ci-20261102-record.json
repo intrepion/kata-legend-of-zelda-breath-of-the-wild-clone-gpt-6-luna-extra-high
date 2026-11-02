@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "workflowCommit": "efea8b42e3c35c80482fcc8a8a0d00c195c479f6",
+  "sourceCommit": "314c1632a2cccf56b1bd6d5130ffcb0a3e9d18a2",
+  "runId": "41444083302",
+  "url": "http://127.0.0.1:4288/",
+  "inputs": {
+    "index.html": "2ca8514839de0b59fcbd6b4a9b06220d0f7e3352a4ae72e43c59b65594273eeb",
+    "style.css": "2fb214c3dc4206f13c85b89f672ae27ca758048cefb98ce5e493951e79e399e9",
+    "game.bundle.js": "204ec2bf9b9570168cb8c4cacfc7a9cd95432bc199cdf4f215f6adae626542eb"
+  },
+  "browser": "153.0.8010.12",
+  "viewport": {
+    "width": 1280,
+    "height": 1000
+  },
+  "screenshots": [
+    "wilds-luna-01.png",
+    "wilds-luna-02.png"
+  ]
+}

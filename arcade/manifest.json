@@ -1,6 +1,47 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "gameId": "kata-legend-of-zelda-breath-of-the-wild-clone-gpt-6-luna-extra-high",
   "playUrl": "https://intrepion.github.io/kata-legend-of-zelda-breath-of-the-wild-clone-gpt-6-luna-extra-high/",
-  "screenshots": []
+  "screenshots": [
+    {
+      "path": "arcade/screenshots/ci-20261102-01.jpg",
+      "sha256": "90b37dffc07c127efbc61210e2f476512b7e3c9127174bffb6e8821dc2053775",
+      "alt": "The Wilds gameplay, view 1",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-01.png",
+        "sourceSha256": "355cbd457e242764e1b4df1c8898414b2d77dd2003823ddb583c9ba7b0e96364",
+        "captureCommit": "314c1632a2cccf56b1bd6d5130ffcb0a3e9d18a2",
+        "workflowRunId": "41444083302",
+        "inputHashes": {
+          "index.html": "2ca8514839de0b59fcbd6b4a9b06220d0f7e3352a4ae72e43c59b65594273eeb",
+          "style.css": "2fb214c3dc4206f13c85b89f672ae27ca758048cefb98ce5e493951e79e399e9",
+          "game.bundle.js": "204ec2bf9b9570168cb8c4cacfc7a9cd95432bc199cdf4f215f6adae626542eb"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "98a6b6017df256b52fa1044902f91e8c38be064b1431f8b64871d5299cf3c91d"
+      }
+    },
+    {
+      "path": "arcade/screenshots/ci-20261102-02.jpg",
+      "sha256": "ab6bce1a10f08660aee2cc6d4bf416b5a2289c2e68d32dd7fd907a7e5dc2023c",
+      "alt": "The Wilds gameplay, view 2",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-02.png",
+        "sourceSha256": "40c4d055f1948a342c74ffc41ca28cc27c665e2bceaf671f59ea66eda50e5f57",
+        "captureCommit": "314c1632a2cccf56b1bd6d5130ffcb0a3e9d18a2",
+        "workflowRunId": "41444083302",
+        "inputHashes": {
+          "index.html": "2ca8514839de0b59fcbd6b4a9b06220d0f7e3352a4ae72e43c59b65594273eeb",
+          "style.css": "2fb214c3dc4206f13c85b89f672ae27ca758048cefb98ce5e493951e79e399e9",
+          "game.bundle.js": "204ec2bf9b9570168cb8c4cacfc7a9cd95432bc199cdf4f215f6adae626542eb"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "98a6b6017df256b52fa1044902f91e8c38be064b1431f8b64871d5299cf3c91d"
+      }
+    }
+  ]
 }
