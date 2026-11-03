@@ -2,7 +2,7 @@ name: Verify game
 
 on:
   push:
-    branches: [codex/dependency-refresh-20261103]
+    branches: [main, codex/dependency-refresh-20261103]
   pull_request:
 
 permissions:
