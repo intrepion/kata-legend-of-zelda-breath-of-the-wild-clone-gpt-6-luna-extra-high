@@ -1,0 +1,22 @@
+name: Verify game
+
+on:
+  push:
+    branches: [codex/dependency-refresh-20261103]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/verify-arcade.mjs
